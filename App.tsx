@@ -1,3 +1,4 @@
+import { StatusBar } from 'expo-status-bar';
 import { Text, View } from 'react-native';
 
 import {
@@ -17,6 +18,7 @@ export default function App() {
       alignItems: 'center',
       justifyContent: 'center'
     }}>
+      <StatusBar style="auto" />
       {fontsLoaded ? <Text style={{ fontFamily: 'Roboto_700Bold' }}>Hello World</Text> : <View></View>}
     </View>
   );
