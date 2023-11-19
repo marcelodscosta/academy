@@ -9,6 +9,7 @@ import {
   Roboto_700Bold,
   useFonts
 } from '@expo-google-fonts/roboto';
+import { Loading } from "./src/components/Loading";
 
 
 export default function App() {
@@ -19,7 +20,14 @@ export default function App() {
     <GluestackUIProvider config={config}>
       <Center flex={1}>
         <StatusBar style="auto" />
-        {fontsLoaded ? <Text style={{ fontFamily: 'Roboto_700Bold' }}>Hello World</Text> : <Center></Center>}
+        {
+          fontsLoaded ?
+            <Text
+              style={{
+                fontFamily: 'Roboto_700Bold'
+              }}>Hello World</Text> :
+            <Loading />
+        }
       </Center>
     </GluestackUIProvider>
   );
