@@ -1,8 +1,7 @@
 import { config } from "@gluestack-ui/config";
-import { Center, GluestackUIProvider } from '@gluestack-ui/themed';
+import { GluestackUIProvider } from '@gluestack-ui/themed';
 
 import { StatusBar } from 'expo-status-bar';
-import { Text } from 'react-native';
 
 import {
   Roboto_400Regular,
@@ -10,6 +9,7 @@ import {
   useFonts
 } from '@expo-google-fonts/roboto';
 import { Loading } from "./src/components/Loading";
+import { SignIn } from "./src/screens/SignIn";
 
 
 export default function App() {
@@ -18,17 +18,14 @@ export default function App() {
 
   return (
     <GluestackUIProvider config={config}>
-      <Center flex={1}>
-        <StatusBar style="auto" />
-        {
-          fontsLoaded ?
-            <Text
-              style={{
-                fontFamily: 'Roboto_700Bold'
-              }}>Hello World</Text> :
-            <Loading />
-        }
-      </Center>
+
+      <StatusBar style="light" />
+      {
+        fontsLoaded ?
+          <SignIn /> :
+          <Loading />
+      }
+
     </GluestackUIProvider>
   );
 }
